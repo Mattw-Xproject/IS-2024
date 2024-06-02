@@ -1,0 +1,16 @@
+e)1. ¿Qué significa que el paquete “top” tiene una dependencia con el paquete “controllers”?
+
+Significa que algún código (como una función o clase) dentro del paquete "top" utiliza funcionalidad (métodos o atributos) de una clase o clases dentro del paquete "controllers".
+
+2. ¿Con cuántos paquetes tiene dependencias tiene el paquete “Threads”? ¿Cuántas dependencias son de entrada y cuántas de salida? ¿Si se hace un cambio en alguna de las clases del paquete “Threads” qué podría pasar?
+
+• El paquete "Threads" tiene dependencias con 6 paquetes.
+• Hay 3 dependencias de entrada: "top", "controllers" y "utils".
+• Hay 3 dependencias de salida: "top", "controllers" y "utils".
+• Si se hace un cambio en una clase del paquete "Threads", podría afectar al código de los otros paquetes que dependen de él (es decir, "top", "controllers" y "utils").
+
+3. Hablando en términos de modularidad, ¿este diagrama muestra un código con bajo o alto acoplamiento entre los paquetes? ¿Esto es bueno o malo?
+
+• El diagrama muestra un código con alto acoplamiento entre los paquetes.
+• Todos los paquetes están interrelacionados, lo que significa que un cambio en un paquete puede afectar a múltiples paquetes.
+• Esto no es bueno porque puede dificultar el mantenimiento y la depuración del código, ya que los cambios en un área pueden tener efectos imprevistos en otras áreas.
