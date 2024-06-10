@@ -1,0 +1,14 @@
+@startuml SalesComunicationDiagramUML
+agent Registro
+agent CatalogoProductos
+agent Venta
+agent lineasVenta
+agent EspecificacionProductos
+CatalogoProductos->EspecificacionProductos: getEspecificacion(ArticuloID id)
+Registro->CatalogoProductos: introducirArticulo(ArticuloID id, int cant)
+CatalogoProductos->>Registro: Registro(CatalogoProductos cp)
+Registro-->Venta: crearLineaVenta(EspecificacionProducto espec, int cant)
+Venta->>lineasVenta: añadir(new LineaVenta(espec, cant))
+
+@enduml
+

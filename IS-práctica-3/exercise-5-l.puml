@@ -1,0 +1,21 @@
+@startuml OrderStateDiagramUML
+[*]  ---> OrdenEncargada 
+
+state a <<choice>> 
+ 
+ 
+' Transiciones 
+OrdenEncargada ---> PedidoColocado: SeleccionarPedido 
+PedidoColocado ---> PedidoPagado: PagarPedido 
+OrdenEncargada ---> PedidoPagado: PagarPedidoPorAdelantado 
+PedidoPagado ---> PedidoValidado: ValidarPedido 
+PedidoValidado -> ProductoObtenido: ObtenerProducto 
+ 
+ProductoObtenido ---> a
+a --->EnvioSeleccionado : EnviarOrdinario 
+a ---> PedidoEnviado: EnviarUrgente
+PedidoPagado ---> PedidoEnviado: DarCervezaALosTransportistas 
+EnvioSeleccionado ---> PedidoEnviado : EnviarProducto
+PedidoRealizado ---> [*]: AñadirClienteSatisfecho | EnviarRecibo 
+PedidoEnviado ---> PedidoRealizado 
+@enduml
